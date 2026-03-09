@@ -2,6 +2,7 @@
   "permissions": {
     "deny": [
       "Read(bin/)"
+      "Read(.git/)"
     ]
   }
 }
