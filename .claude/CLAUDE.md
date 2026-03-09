@@ -276,4 +276,12 @@ Avalonia is **NOT WPF**. Do not use Windows-only namespaces or types.
 
 ## Troubleshooting
 
-エラーが発生した場合は `/troubleshoot-avalonia` コマンドを使用してください。
+| Error | Likely Cause | Fix |
+|---|---|---|
+| `CS0103` — `InitializeComponent` not found | Missing `partial` or `x:Class` mismatch | Add `partial`; verify `x:Class` = fully qualified name |
+| `CS0103` — Control name not found | `x:Name` missing or typo | Add `x:Name="..."` in AXAML; run `dotnet clean` |
+| `CS0103` — Generated property not found | CommunityToolkit naming mismatch | Check `obj/**/generated/*.g.cs` for actual property name |
+| `CS0122` — Inaccessible member | `private` / `internal` on ViewModel member | Change to `public` |
+| `AVLN0002` — Binding path not found | Wrong `x:DataType` or property typo | Verify `x:DataType` points to correct ViewModel |
+| `AVLN1001` — Unexpected token `http` | xmlns URL split across lines | Put each `xmlns="..."` on a single line |
+| `InitializeComponent` not found (runtime) | Wrong xmlns URL | Use `xmlns="https://github.com/avaloniaui"` (no `/avalonia`) |
