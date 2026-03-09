@@ -25,18 +25,10 @@ dotnet restore
 
 ## NuGet Packages
 
-以下のパッケージが `.csproj` に含まれていること。不足している場合は `dotnet add package <パッケージ名>` で追加する。
-
-| パッケージ | バージョン | 用途 |
-|---|---|---|
-| `Avalonia` | 11.3.12 | Avalonia UI コアフレームワーク |
-| `Avalonia.Desktop` | 11.3.12 | デスクトップ向けサポート |
-| `Avalonia.Themes.Fluent` | 11.3.12 | Fluent デザインテーマ |
-| `Avalonia.Fonts.Inter` | 11.3.12 | Inter フォント |
-| `Avalonia.Diagnostics` | 11.3.12 | デバッグツール（Debug ビルドのみ） |
-| `CommunityToolkit.Mvvm` | 8.2.1 | MVVM パターン（`[ObservableProperty]`, `[RelayCommand]` など） |
-
-> **Error hint** — `CS0246: The type or namespace name 'CommunityToolkit' could not be found`: `dotnet add package CommunityToolkit.Mvvm` を実行する。
+`CommunityToolkit.Mvvm` が `.csproj` に含まれていること。不足している場合は以下を実行する。
+```bash
+dotnet add package CommunityToolkit.Mvvm --version 8.2.1
+```
 
 ## Architecture
 
